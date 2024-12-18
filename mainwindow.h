@@ -28,8 +28,6 @@ private slots:
     Mat applySegmentation(const Mat &inputFrame);
     void openSettingsWindow();
     void updateParameters(int tValue, int eT1, int eT2, Scalar lower, Scalar upper);
-    void maskRCNN();
-
 
 
 private:
