@@ -14,8 +14,6 @@ MainWindow::MainWindow(QWidget *parent)
     imageLabel->setAlignment(Qt::AlignCenter);
     layout->addWidget(imageLabel);
 
-
-
     QPushButton *loadImageButton = new QPushButton("Load Image", this);
     QPushButton *loadVideoButton = new QPushButton("Load Video", this);
     QPushButton *startCameraButton = new QPushButton("Start Camera", this);
@@ -173,13 +171,14 @@ Mat MainWindow::applySegmentation(const Mat &inputFrame){
                int x2 = static_cast<int>(detectionData[i * detectionStep + 5] * inputFrame.cols);
                int y2 = static_cast<int>(detectionData[i * detectionStep + 6] * inputFrame.rows);
 
+
                // Extract and process the mask for the detected class
                Mat mask = masks.row(classId).reshape(1, 15);  // Mask size 15x15
                cv::resize(mask, mask, Size(x2 - x1, y2 - y1));
 
                try {
                     Mat roi = output(Rect(x1, y1, x2 - x1, y2 - y1));
-                    //roi.setTo(Scalar(0, 255, 0), mask > 0.5);
+                    //roi.setTo(Scalar(0, 100, 0), mask > 0.5);
                     qDebug() << "roi selected properly";
                 } catch (cv::Exception &e) {
                     qDebug() << "roi can not be selected" << e.what();
@@ -215,12 +214,12 @@ void MainWindow::openSettingsWindow(){
 };
 
 
-void MainWindow::updateParameters(int tValue, int eT1, int eT2, Scalar lower, Scalar upper){
+void MainWindow::updateParameters(int tValue, int eT1, int eT2, int lH, int uH, int lS, int uS, int lV, int uV){
     thresholdValue = tValue;
     edgeThreshold1 = eT1;
     edgeThreshold2 = eT2;
-    lowerHue = lower[0]; lowerSaturation = lower[1]; lowerValue = lower[2];
-    upperHue = upper[0]; upperSaturation = upper[1]; upperValue = upper[2];
+    lowerHue = lH; lowerSaturation = lS; lowerValue = lV;
+    upperHue = uH; upperSaturation = uS; upperValue = uV;
     processAndDisplay();
 
 };

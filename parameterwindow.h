@@ -26,17 +26,29 @@ public:
     ParameterWindow(QWidget *parent = nullptr);
 
 signals:
-    void parameterChanged(int thresholdValue, int edgeTHreshold, int edgeThreshold2, Scalar lower, Scalar upper);
+    void parameterChanged(int thresholdValue, int edgeTHreshold, int edgeThreshold2, int lowerHue, int upperHue,
+                          int lowerSaturation, int upperSaturation, int lowerValue, int upperValue);
 
 private slots:
     void emitParameters(){
-        emit parameterChanged(thresholdSlider->value(), edgeThreshold1Slider->value(), edgeThreshold2Slider->value(), Scalar(), Scalar());
+        emit parameterChanged(thresholdSlider->value(), edgeThreshold1Slider->value(), edgeThreshold2Slider->value(),
+                              lowerHueSlider->value(), upperHueSlider->value(),
+                              lowerSaturationSlider->value(), upperSaturationSlider->value(),
+                              lowerValueSlider->value(), upperValueSlider->value());
     }
 
 private:
     QSlider *thresholdSlider;
+
     QSlider *edgeThreshold1Slider;
     QSlider *edgeThreshold2Slider;
+
+    QSlider *lowerHueSlider;
+    QSlider *upperHueSlider;
+    QSlider *lowerSaturationSlider;
+    QSlider *upperSaturationSlider;
+    QSlider *lowerValueSlider;
+    QSlider *upperValueSlider;
 
 };
 
