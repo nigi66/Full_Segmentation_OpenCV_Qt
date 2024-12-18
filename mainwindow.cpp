@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     layout->addWidget(imageLabel);
 
 
+
     QPushButton *loadImageButton = new QPushButton("Load Image", this);
     QPushButton *loadVideoButton = new QPushButton("Load Video", this);
     QPushButton *startCameraButton = new QPushButton("Start Camera", this);
@@ -31,6 +32,9 @@ MainWindow::MainWindow(QWidget *parent)
     segmentationComboBox->addItem("Mask RCNN");
     layout->addWidget(segmentationComboBox);
 
+    QPushButton *applyProcess = new QPushButton("Apply", this);
+    layout->addWidget(applyProcess);
+
     QPushButton *settingsButton = new QPushButton("Settings", this);
     layout->addWidget(settingsButton);
 
@@ -44,6 +48,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(loadImageButton, &QPushButton::clicked, this, &MainWindow::loadImage);
     connect(loadVideoButton, &QPushButton::clicked, this, &MainWindow::loadVideo);
     connect(startCameraButton, &QPushButton::clicked, this, &MainWindow::startCamera);
+    connect(applyProcess, &QPushButton::clicked, this, &MainWindow::onApplyProcess);
     connect(settingsButton, &QPushButton::clicked, this, &MainWindow::openSettingsWindow);
 }
 
@@ -206,7 +211,6 @@ void MainWindow::openSettingsWindow(){
         connect(parameterWindow, &ParameterWindow::parameterChanged, this, &MainWindow::updateParameters);
 
     }
-    processAndDisplay();
     parameterWindow->show();
 };
 
@@ -218,7 +222,10 @@ void MainWindow::updateParameters(int tValue, int eT1, int eT2, Scalar lower, Sc
     lowerHue = lower[0]; lowerSaturation = lower[1]; lowerValue = lower[2];
     upperHue = upper[0]; upperSaturation = upper[1]; upperValue = upper[2];
     processAndDisplay();
+
 };
 
-
+void MainWindow::onApplyProcess(){
+    processAndDisplay();
+}
 
