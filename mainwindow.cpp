@@ -196,7 +196,7 @@ Mat MainWindow::applySegmentation(const Mat &inputFrame){
    }
 
    default:
-       output = inputFrame.clone(); // Clone the input frame for no segmentation
+       output = inputFrame.clone();
        break;
    }
 
@@ -220,6 +220,7 @@ void MainWindow::updateParameters(int tValue, int eT1, int eT2, int lH, int uH, 
     edgeThreshold2 = eT2;
     lowerHue = lH; lowerSaturation = lS; lowerValue = lV;
     upperHue = uH; upperSaturation = uS; upperValue = uV;
+
     processAndDisplay();
 
 };

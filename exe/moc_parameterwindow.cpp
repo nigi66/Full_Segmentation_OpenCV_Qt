@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_ParameterWindow_t {
-    QByteArrayData data[10];
-    char stringdata0[112];
+    QByteArrayData data[13];
+    char stringdata0[165];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,16 +38,20 @@ QT_MOC_LITERAL(2, 33, 0), // ""
 QT_MOC_LITERAL(3, 34, 14), // "thresholdValue"
 QT_MOC_LITERAL(4, 49, 13), // "edgeTHreshold"
 QT_MOC_LITERAL(5, 63, 14), // "edgeThreshold2"
-QT_MOC_LITERAL(6, 78, 6), // "Scalar"
-QT_MOC_LITERAL(7, 85, 5), // "lower"
-QT_MOC_LITERAL(8, 91, 5), // "upper"
-QT_MOC_LITERAL(9, 97, 14) // "emitParameters"
+QT_MOC_LITERAL(6, 78, 8), // "lowerHue"
+QT_MOC_LITERAL(7, 87, 8), // "upperHue"
+QT_MOC_LITERAL(8, 96, 15), // "lowerSaturation"
+QT_MOC_LITERAL(9, 112, 15), // "upperSaturation"
+QT_MOC_LITERAL(10, 128, 10), // "lowerValue"
+QT_MOC_LITERAL(11, 139, 10), // "upperValue"
+QT_MOC_LITERAL(12, 150, 14) // "emitParameters"
 
     },
     "ParameterWindow\0parameterChanged\0\0"
     "thresholdValue\0edgeTHreshold\0"
-    "edgeThreshold2\0Scalar\0lower\0upper\0"
-    "emitParameters"
+    "edgeThreshold2\0lowerHue\0upperHue\0"
+    "lowerSaturation\0upperSaturation\0"
+    "lowerValue\0upperValue\0emitParameters"
 };
 #undef QT_MOC_LITERAL
 
@@ -65,13 +69,13 @@ static const uint qt_meta_data_ParameterWindow[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    5,   24,    2, 0x06 /* Public */,
+       1,    9,   24,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       9,    0,   35,    2, 0x08 /* Private */,
+      12,    0,   43,    2, 0x08 /* Private */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, 0x80000000 | 6, 0x80000000 | 6,    3,    4,    5,    7,    8,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,    3,    4,    5,    6,    7,    8,    9,   10,   11,
 
  // slots: parameters
     QMetaType::Void,
@@ -85,14 +89,14 @@ void ParameterWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         auto *_t = static_cast<ParameterWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->parameterChanged((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< Scalar(*)>(_a[4])),(*reinterpret_cast< Scalar(*)>(_a[5]))); break;
+        case 0: _t->parameterChanged((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5])),(*reinterpret_cast< int(*)>(_a[6])),(*reinterpret_cast< int(*)>(_a[7])),(*reinterpret_cast< int(*)>(_a[8])),(*reinterpret_cast< int(*)>(_a[9]))); break;
         case 1: _t->emitParameters(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (ParameterWindow::*)(int , int , int , Scalar , Scalar );
+            using _t = void (ParameterWindow::*)(int , int , int , int , int , int , int , int , int );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&ParameterWindow::parameterChanged)) {
                 *result = 0;
                 return;
@@ -142,9 +146,9 @@ int ParameterWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void ParameterWindow::parameterChanged(int _t1, int _t2, int _t3, Scalar _t4, Scalar _t5)
+void ParameterWindow::parameterChanged(int _t1, int _t2, int _t3, int _t4, int _t5, int _t6, int _t7, int _t8, int _t9)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t4))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t5))) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t4))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t5))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t6))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t7))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t8))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t9))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_WARNING_POP

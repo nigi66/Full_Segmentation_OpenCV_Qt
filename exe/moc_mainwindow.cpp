@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[19];
-    char stringdata0[187];
+    QByteArrayData data[22];
+    char stringdata0[192];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -47,18 +47,21 @@ QT_MOC_LITERAL(11, 127, 16), // "updateParameters"
 QT_MOC_LITERAL(12, 144, 6), // "tValue"
 QT_MOC_LITERAL(13, 151, 3), // "eT1"
 QT_MOC_LITERAL(14, 155, 3), // "eT2"
-QT_MOC_LITERAL(15, 159, 6), // "Scalar"
-QT_MOC_LITERAL(16, 166, 5), // "lower"
-QT_MOC_LITERAL(17, 172, 5), // "upper"
-QT_MOC_LITERAL(18, 178, 8) // "maskRCNN"
+QT_MOC_LITERAL(15, 159, 2), // "lH"
+QT_MOC_LITERAL(16, 162, 2), // "uH"
+QT_MOC_LITERAL(17, 165, 2), // "lS"
+QT_MOC_LITERAL(18, 168, 2), // "uS"
+QT_MOC_LITERAL(19, 171, 2), // "lV"
+QT_MOC_LITERAL(20, 174, 2), // "uV"
+QT_MOC_LITERAL(21, 177, 14) // "onApplyProcess"
 
     },
     "MainWindow\0loadImage\0\0loadVideo\0"
     "startCamera\0processFrame\0processAndDisplay\0"
     "applySegmentation\0Mat\0inputFrame\0"
     "openSettingsWindow\0updateParameters\0"
-    "tValue\0eT1\0eT2\0Scalar\0lower\0upper\0"
-    "maskRCNN"
+    "tValue\0eT1\0eT2\0lH\0uH\0lS\0uS\0lV\0uV\0"
+    "onApplyProcess"
 };
 #undef QT_MOC_LITERAL
 
@@ -83,8 +86,8 @@ static const uint qt_meta_data_MainWindow[] = {
        6,    0,   63,    2, 0x08 /* Private */,
        7,    1,   64,    2, 0x08 /* Private */,
       10,    0,   67,    2, 0x08 /* Private */,
-      11,    5,   68,    2, 0x08 /* Private */,
-      18,    0,   79,    2, 0x08 /* Private */,
+      11,    9,   68,    2, 0x08 /* Private */,
+      21,    0,   87,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -94,7 +97,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     0x80000000 | 8, 0x80000000 | 8,    9,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, 0x80000000 | 15, 0x80000000 | 15,   12,   13,   14,   16,   17,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,   12,   13,   14,   15,   16,   17,   18,   19,   20,
     QMetaType::Void,
 
        0        // eod
@@ -114,8 +117,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 5: { Mat _r = _t->applySegmentation((*reinterpret_cast< const Mat(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< Mat*>(_a[0]) = std::move(_r); }  break;
         case 6: _t->openSettingsWindow(); break;
-        case 7: _t->updateParameters((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< Scalar(*)>(_a[4])),(*reinterpret_cast< Scalar(*)>(_a[5]))); break;
-        case 8: _t->maskRCNN(); break;
+        case 7: _t->updateParameters((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5])),(*reinterpret_cast< int(*)>(_a[6])),(*reinterpret_cast< int(*)>(_a[7])),(*reinterpret_cast< int(*)>(_a[8])),(*reinterpret_cast< int(*)>(_a[9]))); break;
+        case 8: _t->onApplyProcess(); break;
         default: ;
         }
     }
